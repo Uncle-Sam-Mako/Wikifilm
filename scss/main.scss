@@ -21,6 +21,9 @@ a{
 }
 button{
     cursor: pointer;
+    &:focus{
+        outline: none;
+    }
 }
 
 
@@ -50,7 +53,7 @@ button{
 .navbar{
     min-height: 60px;
     //box-shadow: 0px 0px 10px 1px var(--shadow);
-    padding: 5px 20px;
+    padding: 7px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,6 +66,12 @@ button{
             vertical-align: middle;
             &.logo{
                 width: 45px;
+                .letter{
+                    fill : #fff;
+                }
+                .rect{
+                    fill : #333333;
+                }
             }
             &.text{
                 margin: 0 10px;
@@ -87,11 +96,53 @@ button{
     padding: 10px 30px;
     &.btn-wow{
         color: #fff;
-        background-color: var(--blue);
-        border: none;
+        background:  linear-gradient(to left, var(--blue), #00d9ff);
         font-weight: bold;
         box-shadow: 0px 3px 10px 3px var(--shadow);
+        transition: .4s;
+        border: none;
+        &:hover{
+            border-color: #5ebfff;
+        }
     }
+    &:focus{
+        outline: 2px solid #00b7ff54;
+    }
+}
+.bulle-container{
+    width: 100px;
+    .bulle{
+        background-color: var(--color-two);
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        display: grid;
+        place-items: center;
+        transition: width .6s ease;
+        overflow-x: hidden;
+        margin-left: auto;
+        cursor: pointer;
+        p{
+            right: 0;
+            color: var(--color-one);
+            font-weight: bold;
+            margin: 0px 10px;
+            &.my-name{
+                display: none;
+                transition: display .6s ease;
+                width: max-content;
+            }
+        }
+        &:hover{
+            width: 100px;
+            p{
+                display: block;
+            }
+            p:not(.my-name){
+                display: none;
+            }
+        }
+    }    
 }
 .switch{
     margin: 0 20px;
@@ -113,10 +164,6 @@ button{
         z-index: 1;
         width: 100%;
         height: 100%;
-        svg{
-            width: 15px;
-            fill: var(--text-color);
-        }
     }
     input{
         position: absolute;
@@ -150,11 +197,17 @@ html.night-mode{
     --text-color : #eee;
     --color-two : #ffb400;
     --blur : rgb(22 22 22 / 40%);
+    --bold-text : #fafafa;
+    .brand{
+        .letter{
+            fill : #333333 !important;
+        }
+        .rect{
+            fill : #fff !important;
+        }
+    }
     .switch{
         background: var(--blue);
-        svg{
-            fill: #fff;
-        }
         input{
             &::after{
                 transform: translateX(33px);
