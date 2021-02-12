@@ -14,10 +14,13 @@ body{
     overflow-x: hidden;
     .left-side{
         padding: 25px 25px 25px 60px;
+        background: url('../../assets/images/bg.png');
+        background-size: cover;
         h1{
             font-family: var(--font-second);
             font-size: 3em;
             font-weight: bolder;
+            overflow-wrap: break-word;
         }
         p{
             margin: 15px 0;
@@ -28,7 +31,7 @@ body{
         overflow-y: hidden;
         margin-right: -60px;
         img{
-            object-fit: scale-down;
+            object-fit: contain;
             height: 100%;
             padding: 10px;
         }
@@ -41,8 +44,8 @@ body{
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.432);
-            box-shadow: inset 10px 0px 50px 60px #fff;
+            background: var(--blur);
+            box-shadow: inset 10px 0px 50px 60px var(--color-one);
             backdrop-filter: sepia(0.5);
         }
     }
@@ -50,7 +53,7 @@ body{
 .bulle-container{
     width: 100px;
     .bulle{
-        background-color: #004688;
+        background-color: var(--color-two);
         width: 40px;
         height: 40px;
         border-radius: 80px;
@@ -83,3 +86,18 @@ body{
     }    
 }
 
+@media (max-width : 640px){
+    .banner{
+        display: block;
+        .right-side{
+            display: none;
+        }
+        .left-side{
+            height: 100%;
+            padding: 10px 25px;
+            h1{
+                font-size: 3em;
+            }
+        }
+    }
+}

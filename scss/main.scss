@@ -10,6 +10,8 @@
 }
 body{
     font-family: var(--font-primary);
+    background: var(--color-one);
+    transition: background .6s;
 }
 img, svg{
     width: 100%;
@@ -84,8 +86,8 @@ button{
     width: max-content;
     padding: 10px 30px;
     &.btn-wow{
-        color: var(--color-one);
-        background-color: #004688;
+        color: #fff;
+        background-color: var(--blue);
         border: none;
         font-weight: bold;
         box-shadow: 0px 3px 10px 3px var(--shadow);
@@ -113,6 +115,7 @@ button{
         height: 100%;
         svg{
             width: 15px;
+            fill: var(--text-color);
         }
     }
     input{
@@ -134,7 +137,7 @@ button{
             background: var(--blue);
             top: 5px;
             left: 3px;
-            box-shadow: -3px 1px 7px var(--shadow);
+            box-shadow: -3px 1px 3px rgba(0, 0, 0, 0.308);
             z-index: 1;
             transform: translateX(0);
             transition: transform .3s ease-in-out;
@@ -143,16 +146,46 @@ button{
 }
 
 html.night-mode{
+    --color-one : #161616;
+    --text-color : #eee;
+    --color-two : #ffb400;
+    --blur : rgb(22 22 22 / 40%);
     .switch{
         background: var(--blue);
         svg{
-            fill: var(--color-one);
+            fill: #fff;
         }
         input{
             &::after{
                 transform: translateX(33px);
-                background: var(--color-one);
+                background: #fff;
             }
         }
     }
+}
+
+@media(max-width : 640px){
+    .navbar{
+        min-height: 60px;
+        //box-shadow: 0px 0px 10px 1px var(--shadow);
+        padding: 5px 20px;
+        display: block;
+        .brand{
+            display: flex !important;
+            margin: 0 !important;
+            flex-direction: column;
+            align-items: center;
+            justify-self: center;
+            span{
+                display: block !important;
+                width: max-content;
+            }
+        }
+        .nav-item-container{
+            justify-content: space-between;
+            .bulle, .switch{
+                margin: 0;
+            }
+        }
+    }    
 }
