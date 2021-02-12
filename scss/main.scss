@@ -1,5 +1,6 @@
 @import './variables';
 @import './index';
+@import './search';
 
 //reset
 *{
@@ -21,8 +22,10 @@ a{
 }
 button{
     cursor: pointer;
+}
+button, input, textarea, a{
     &:focus{
-        outline: none;
+        outline: 2px solid #00b7ff54;
     }
 }
 
@@ -104,9 +107,6 @@ button{
         &:hover{
             border-color: #5ebfff;
         }
-    }
-    &:focus{
-        outline: 2px solid #00b7ff54;
     }
 }
 .bulle-container{

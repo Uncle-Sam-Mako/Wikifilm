@@ -38,3 +38,14 @@
     --font-primary : 'Proxima Nova Rg';
     --font-second : 'Ubuntu', sans-serif;
 }
+/*------------------------*/
+
+/*-----Mixins-------*/
+@mixin border($top, $left, $bottom, $right, $color){
+    border-top: $top;
+    border-left: $left;
+    border-bottom: $bottom;
+    border-right: $right;
+    border-style: solid ;
+    border-color :$color; 
+}
