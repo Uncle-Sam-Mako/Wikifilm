@@ -44,5 +44,30 @@ html.night-mode{
     }
 }
 .movie-container{
-    
+    .movie-item{
+        a{
+            display: block;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px var(--shadow);
+            background-color: var(--search-bar-bg);
+            border: 1px solid transparent;
+            transition: .6s;
+            &:hover{
+                border-color: var(--search-bar-border);
+            }
+        }
+        span{
+            display: block;
+        }
+    }
+    .movie-title{
+        margin: 0 10px;
+        padding: 7px 0;
+        p{
+            font:{
+                weight: bold;
+            }
+        }
+    }
 }

@@ -5,6 +5,38 @@
         padding: 5px 10px ;
     }
 }
+@media(min-width : 992px){
+    @for $i from 1 through 12{
+        .wd-lg-#{$i}{
+            width: 100% / (12/$i);
+            padding: 5px 10px ;
+        }
+    }
+}
+@media(min-width : 768px ) and (max-width : 992px){
+    @for $i from 1 through 12{
+        .wd-md-#{$i}{
+            width: 100% / (12/$i);
+            padding: 5px 10px ;
+        }
+    }
+}
+@media(min-width : 640px) and (max-width : 768px){
+    @for $i from 1 through 12{
+        .wd-sm-#{$i}{
+            width: 100% / (12/$i);
+            padding: 5px 10px ;
+        }
+    }
+}
+@media(max-width : 640px){
+    @for $i from 1 through 12{
+        .wd-xs-#{$i}{
+            width: 100% / (12/$i);
+            padding: 5px 10px ;
+        }
+    }
+}
 @for $i from 1 through 5{
     //margin
     .mg-#{$i}{
