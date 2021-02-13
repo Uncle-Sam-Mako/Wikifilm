@@ -13,6 +13,7 @@ body{
     font-family: var(--font-primary);
     background: var(--color-one);
     transition: background .6s;
+    scroll-behavior: smooth;
 }
 img, svg{
     width: 100%;
@@ -50,6 +51,11 @@ button, input, textarea, a{
     }
     &.between-y{
         align-items: space-between;
+    }
+    &.scroll{
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        flex-shrink: 0;
     }
 }
 
@@ -245,4 +251,11 @@ html.night-mode{
             }
         }
     }    
+}
+.footer{
+    .logos{
+        img{
+            width: 100px;
+        }
+    }
 }
