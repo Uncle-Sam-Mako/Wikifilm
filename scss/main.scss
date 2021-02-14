@@ -9,6 +9,22 @@
     box-sizing: border-box;
     color: var(--text-color);
 }
+*{
+    &::-webkit-scrollbar{
+        background: var(--scrollbar-bg);
+        width: 10px;
+        height: 10px;
+        border-radius: 12px;
+    }
+    &::-webkit-scrollbar-thumb{
+        width: 7px;
+        background: var(--scrollbar-thumb);
+        border-radius: 12px;
+    }
+}
+a{
+    color: var(--link-color);
+}
 body{
     font-family: var(--font-primary);
     background: var(--color-one);
@@ -252,10 +268,19 @@ html.night-mode{
         }
     }    
 }
-.footer{
+footer{
+    background: var(--search-bar-bg);
+    padding: 20px 20px 10px 20px;
+    margin-top: 60px;
     .logos{
+        margin: 15px 0;
+        span{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
         img{
-            width: 100px;
+            width: 70px;
         }
     }
 }

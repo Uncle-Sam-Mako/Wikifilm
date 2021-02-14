@@ -1,7 +1,7 @@
 {
   "name": "wikifilm",
   "version": "1.0.0",
-  "description": "A movie information search site using the MovieDB API",
+  "description": "A movie information search website using the gMovieDB API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
