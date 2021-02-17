@@ -37,6 +37,9 @@ img, svg{
 a{
     text-decoration: none;
 }
+ul{
+    list-style: none;
+}
 button{
     cursor: pointer;
 }
@@ -109,7 +112,6 @@ button, input, textarea, a{
         }
     }
     .nav{
-        list-style-type: none;
         li{
             display: inline-block;
             margin: 0 15px;

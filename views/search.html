@@ -22,6 +22,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../modal/dist/css/medea.css">
     <link rel="stylesheet" href="../dist/css/style.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
 </head>
@@ -201,7 +202,7 @@
                         <img src="../assets/images/img2.jpg" alt="">
                     </div>
                     <div class="movie-infos">
-                        <ul>
+                        <ul class="infos-list">
                             <li>
                                 <span class="label">Orignal title</span>
                                 <span>I still believe</span>
@@ -224,6 +225,70 @@
             </div>
         </aside>
     </section>
+    <aside id="modal1" class="modal movie-infos" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
+        <div class="modal-wrapper wd-lg-8" aria-labelledby="">
+            <button class="js-modal-close"><img src="../modal/src/assets/svg/times.svg" alt="" srcset=""></button>
+            <div class="movie-infos-container">
+                <div class="small-infos">
+                    <div class="infos">
+                        <span class="title">
+                            <p class="name">I still believe</p>
+                        </span>
+                        <span class="small-infos-1">
+                            <ul>
+                                <li>2020</li>
+                                <li>US</li>
+                                <li>Music, drama</li>
+                                <li>1h 56m</li>
+                            </ul>
+                        </span>
+                        <span class="popularity">7,3</span>
+                    </div>
+                    <div class="poster-background">
+                        <img src="../assets/images/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="more-infos">
+                    <ul class="infos-list">
+                        <li>
+                            <span class="label">Original title</span>
+                            <span>I still believe</span>
+                        </li>
+                        <li>
+                            <span class="label">Original language</span>
+                            <span>English</span>
+                        </li>
+                        <li>
+                            <span class="label">Release date</span>
+                            <span>13/03/2020</span>
+                        </li>
+                        <li>
+                            <span class="label">Country</span>
+                            <span>United States of America</span>
+                        </li>
+                        <li>
+                            <span class="label">Type</span>
+                            <span>Movie</span>
+                        </li>
+                        <li>
+                            <span class="label">Budjet</span>
+                            <span>56 Millions $</span>
+                        </li>
+                        <li>
+                            <span class="label">Recette</span>
+                            <span>56 Millions $</span>
+                        </li>
+                        <li class="overview">
+                            <span class="label">Overview</span>
+                            <span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque quam alias temporibus, quaerat cum cupiditate, labore sit ex nemo aliquid consequuntur saepe explicabo facilis eos. Perspiciatis quisquam necessitatibus similique.</p>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
     <footer>
         <div class="footer-content container">
             <div class="logos">
@@ -244,7 +309,9 @@
             </div>
         </div>
     </footer>
+    <script src="../dist/js/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/47fc11e9b5.js" crossorigin="anonymous"></script>
     <script src="../dist/js/app.js"></script>
+    <script src="../modal/dist/js/medea.js"></script>
 </body>
 </html>
