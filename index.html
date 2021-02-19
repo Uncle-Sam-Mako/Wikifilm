@@ -82,5 +82,32 @@
         </div>
     </section>
     <script src="https://kit.fontawesome.com/47fc11e9b5.js" crossorigin="anonymous"></script>
+    <script>
+        const IMAGE_PATH = "https://image.tmdb.org/t/p/w500";
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+        function setBannerImage(items){
+            const numberOfItem = items.length;
+            let randomIndex = getRandomInt(numberOfItem);
+            let randomItem = items[randomIndex];
+            let imgPoster = document.getElementById('random-poster');
+            imgPoster.src = IMAGE_PATH + randomItem.poster_path;
+        }
+
+        function searchFilmToPutOnBanner(){
+            const url = 'https://api.themoviedb.org/3/keyword/253695/movies?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&include_adult=false';
+            fetch(url)
+                .then((res) => res.json())
+                .then((data) => {
+                    const movies = data.results; 
+                    setBannerImage(movies);
+                })
+                .catch(() =>{
+                    console.log("Error", error);
+                })
+        }
+        searchFilmToPutOnBanner()
+    </script>
 </body>
 </html>
