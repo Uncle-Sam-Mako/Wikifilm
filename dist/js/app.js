@@ -21,36 +21,38 @@ const movieSearched = document.querySelector(".result-section .movie-container")
 
 function search(page){
     const value = inputSearch.value;
-    newUrl = url + "&query=" + value;
-    console.log("Value : ", value);
-    fetch(newUrl)
-        .then((res) => res.json())
-        .then((data) => {
-            const movies = data.results; 
-            setMoviesSearched(movies);
-            setResultTitle(data, value);
-            console.log(movies);
-        })
-        .catch(() =>{
-            console.log("Error", error);
-        })
+    if(value){
+        newUrl = url + "&query=" + value;
+        console.log("Value : ", value);
+        fetch(newUrl)
+            .then((res) => res.json())
+            .then((data) => {
+                const movies = data.results; 
+                setMoviesSearched(movies);
+                console.log(movies);
+            })
+            .catch(() =>{
+                console.log("Error", error);
+            })
+        document.querySelector('.result-section').style.display = "block";
+    }else{
+        document.querySelector('.result-section').style.display = "none";
+    }
 }
+
 function getNewestMovies(){
-    const url = "https://api.themoviedb.org/3/movie/upcoming?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&page=1";
+   
+    const url = "https://api.themoviedb.org/3/search/movie?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&query=star%20wars&page=1&include_adult=false";
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
             const movies = data.results; 
-            setNewestMovies(movies);
+            setNewestMovies(movies)
             console.log(movies);
         })
-        .catch(() =>{
+        .catch(() => {
             console.log("Error", error);
         })
-}
-function setResultTitle(resultFound, value){
-    const resultTitle = document.querySelector('.result-section h2');
-    resultTitle.innerHTML = `Results for "${value}"`;
 }
 
 function setNewestMovies(items){
@@ -95,16 +97,10 @@ function setRecommendMovie(items){
    moviesBlock.querySelector(".original_title").innerHTML = randomItem.title;
    moviesBlock.querySelector(".release_date").innerHTML = randomItem.release_date;
    moviesBlock.querySelector(".original_language").innerHTML = randomItem.original_language;
-   moviesBlock.querySelector(".overview").innerHTML = randomItem.overview;
-    // movieItem.querySelector('.movie-title p').innerHTML=item.title;
-    // }else{
-    //     movieItem.querySelector('.movie-title p').innerHTML=item.name;
-    // }
-    
-    
+   moviesBlock.querySelector(".overview").innerHTML = randomItem.overview;    
 }
 
-function getRecommendMovie(items){
+function getRecommendMovie(){
     const url = 'https://api.themoviedb.org/3/keyword/253695/movies?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&include_adult=false';
     fetch(url)
         .then((res) => res.json())
@@ -116,6 +112,7 @@ function getRecommendMovie(items){
             console.log("Error", error);
         })
 }
+
 function ClearMoviesSearched(){
     const moviesBlock = document.querySelector('.result-section .movie-container .flex');
     moviesBlock.innerHTML="";

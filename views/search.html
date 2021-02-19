@@ -78,7 +78,7 @@
     </section>
     <section class="main-page flex">
         <div class="page-left wd-lg-9 wd-12">
-            <section class="result-section pd-x-3" id="resultSection">
+            <section class="result-section pd-x-3" style="display: none;">
                 <h2></h2>
                 <div class="movie-container mg-t-5">
                     <template id="movie-template">
@@ -93,12 +93,12 @@
                         </a>
                     </div>
                     </template>
-                    <div class="flex">
+                    <div class="flex" id="resultSection">
                         
                     </div>
                 </div>
             </section>
-            <section class="newest-section mg-t-5 pd-x-3" id="NewestSection">
+            <section class="newest-section mg-t-5 pd-x-3">
                 <h2>Newests movies"</h2>
                 <div class="movie-container mg-t-5">
                     <template id="newest-movie-template">
@@ -113,7 +113,7 @@
                             </a>
                         </div>
                     </template>
-                    <div class="flex scroll">
+                    <div class="flex scroll" id="newestSection">
                         
                     </div>
                 </div>
