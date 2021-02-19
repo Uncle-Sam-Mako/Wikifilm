@@ -43,7 +43,7 @@ function search(page){
 
 function getNewestMovies(){
    
-    const url = "https://api.themoviedb.org/3/search/movie?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&query=star%20wars&page=1&include_adult=false";
+    const url = "https://api.themoviedb.org/3/movie/upcoming?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&page=1";
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
