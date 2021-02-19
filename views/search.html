@@ -77,12 +77,32 @@
         </div>
     </section>
     <section class="main-page flex">
-        <div class="page-left container wd-lg-9">
+        <div class="page-left wd-lg-9 wd-12">
             <section class="result-section">
                 <h2></h2>
                 <div class="movie-container mg-t-5">
-                      <template id="movie-template">
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
+                    <template id="movie-template">
+                    <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
+                        <a href="#modal1" data-modal="#modal1" class="js-modal-open">
+                            <span class="movie-poster">
+                                <img src="" alt="">
+                            </span>
+                            <span class="movie-title">
+                                <p>Title</p>
+                            </span>
+                        </a>
+                    </div>
+                    </template>
+                    <div class="flex">
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="newest-section mg-t-5">
+                <h2>Newests movies"</h2>
+                <div class="movie-container mg-t-5">
+                    <template id="newest-movie-template">
+                        <div class="movie-item wd-lg-2 wd-md-4 wd-sm-4 wd-xs-6">
                             <a href="#modal1" data-modal="#modal1" class="js-modal-open">
                                 <span class="movie-poster">
                                     <img src="" alt="">
@@ -92,19 +112,12 @@
                                 </span>
                             </a>
                         </div>
-                      </template>
-                    <div class="flex">
+                    </template>
+                    <div class="flex scroll">
                         
                     </div>
                 </div>
             </section>
-            <section class="newest-section mg-t-5">
-                <h2>Newests movies"</h2>
-                <div class="movie-container mg-t-5">
-                    <div class="flex scroll scrollbox"></div>
-                </div>
-            </section>
-            
         </div>
         <aside class="page-right wd-lg-3">
             <div class="suggested-container">

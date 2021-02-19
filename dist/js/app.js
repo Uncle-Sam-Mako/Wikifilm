@@ -27,7 +27,7 @@ function search(page){
         .then((res) => res.json())
         .then((data) => {
             const movies = data.results; 
-            setMoviesSearched(movies, moviesBlock);
+            setMoviesSearched(movies);
             setResultTitle(data, value);
             console.log(movies);
         })
@@ -57,7 +57,7 @@ function setNewestMovies(items){
     const moviesBlock = document.querySelector('.newest-section .movie-container .flex');
     for(let i = 0, l = items.length; i<l; i++ ){
         let item = items[i];
-        let movieItemTemplate = document.getElementById("movie-template");
+        let movieItemTemplate = document.getElementById("newest-movie-template");
         let movieItem = document.importNode(movieItemTemplate.content, true);
         movieItem.querySelector("a").dataset.movie_id = item.id;
         movieItem.querySelector(".movie-poster img").src = item.poster_path ? IMAGE_PATH + item.poster_path : 'https://via.placeholder.com/300x450?text=No+poster';
@@ -93,15 +93,14 @@ function ClearMoviesSearched(){
 }
 
 window.onload = function(){
-buttonSearch.addEventListener('click', function(e){
-    e.preventDefault();
-    search();
-})
-inputSearch.addEventListener('keyup', function(e){
-    if(e.keyCode === 13){
+    getNewestMovies();
+    buttonSearch.addEventListener('click', function(e){
+        e.preventDefault();
         search();
-    }
-})
-
+    })
+    inputSearch.addEventListener('keyup', function(e){
+        if(e.keyCode === 13){
+            search();
+        }
+    })
 }
-getNewestMovies();
