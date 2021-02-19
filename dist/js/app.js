@@ -54,7 +54,7 @@ function setResultTitle(resultFound, value){
 }
 
 function setNewestMovies(items){
-    const moviesBlock = document.querySelector('.newest-section .movie-container .flex');
+    const moviesBlock = document.getElementById('newestSection');
     for(let i = 0, l = items.length; i<l; i++ ){
         let item = items[i];
         let movieItemTemplate = document.getElementById("newest-movie-template");
@@ -68,7 +68,7 @@ function setNewestMovies(items){
 
 function setMoviesSearched(items){
     ClearMoviesSearched();
-    const moviesBlock = document.querySelector('.result-section .movie-container .flex');
+    const moviesBlock = document.getElementById('resultSection');
     for(let i = 0, l = items.length; i<l; i++ ){
         let item = items[i];
         if(item.media_type==="tv" || item.media_type==="movie"){
@@ -86,7 +86,36 @@ function setMoviesSearched(items){
     }
 }
 
+function setRecommendMovie(items){
+    const moviesBlock = document.getElementById('recommendedSection');
+    const numberOfItem = items.length;
+    let randomIndex = Math.floor(Math.random() * Math.floor(numberOfItem));
+    let randomItem = items[randomIndex];
+   moviesBlock.querySelector(".movie-poster img").src = randomItem.poster_path ? IMAGE_PATH + randomItem.poster_path : 'https://via.placeholder.com/300x450?text=No+poster';
+   moviesBlock.querySelector(".original_title").innerHTML = randomItem.title;
+   moviesBlock.querySelector(".release_date").innerHTML = randomItem.release_date;
+   moviesBlock.querySelector(".original_language").innerHTML = randomItem.original_language;
+   moviesBlock.querySelector(".overview").innerHTML = randomItem.overview;
+    // movieItem.querySelector('.movie-title p').innerHTML=item.title;
+    // }else{
+    //     movieItem.querySelector('.movie-title p').innerHTML=item.name;
+    // }
+    
+    
+}
 
+function getRecommendMovie(items){
+    const url = 'https://api.themoviedb.org/3/keyword/253695/movies?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&include_adult=false';
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            const movies = data.results; 
+            setRecommendMovie(movies);
+        })
+        .catch(() =>{
+            console.log("Error", error);
+        })
+}
 function ClearMoviesSearched(){
     const moviesBlock = document.querySelector('.result-section .movie-container .flex');
     moviesBlock.innerHTML="";
@@ -94,6 +123,7 @@ function ClearMoviesSearched(){
 
 window.onload = function(){
     getNewestMovies();
+    getRecommendMovie();
     buttonSearch.addEventListener('click', function(e){
         e.preventDefault();
         search();
