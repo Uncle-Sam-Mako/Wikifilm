@@ -72,56 +72,29 @@
     </header>
     <section class="search-bar">
         <div class="search-input-container">
-            <input type="text" placeholder="Search a movie">
-            <button class="fas fa-search"></button>
+            <input type="text" placeholder="Search a movie" id="inputSearch">
+            <button class="fas fa-search" id="buttonSearch"></button>
         </div>
     </section>
     <section class="main-page flex">
         <div class="page-left container wd-lg-9">
             <section class="result-section">
-                <h2>Results for "I still believe"</h2>
+                <h2></h2>
                 <div class="movie-container mg-t-5">
+                      <template id="movie-template">
+                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
+                                <span class="movie-poster">
+                                    <img src="" alt="">
+                                </span>
+                                <span class="movie-title">
+                                    <p>Title</p>
+                                </span>
+                            </a>
+                        </div>
+                      </template>
                     <div class="flex">
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
-                                <span class="movie-poster">
-                                    <img src="../assets/images/img1.jpg" alt="">
-                                </span>
-                                <span class="movie-title">
-                                    <p>I still believe</p>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
-                                <span class="movie-poster">
-                                    <img src="../assets/images/img2.jpg" alt="">
-                                </span>
-                                <span class="movie-title">
-                                    <p>I still believe</p>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
-                                <span class="movie-poster">
-                                    <img src="../assets/images/img1.jpg" alt="">
-                                </span>
-                                <span class="movie-title">
-                                    <p>I still believe</p>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
-                                <span class="movie-poster">
-                                    <img src="../assets/images/img2.jpg" alt="">
-                                </span>
-                                <span class="movie-title">
-                                    <p>I still believe</p>
-                                </span>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
             </section>
@@ -130,7 +103,7 @@
                 <div class="movie-container mg-t-5">
                     <div class="flex scroll scrollbox">
                         <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
                                 <span class="movie-poster">
                                     <img src="../assets/images/img1.jpg" alt="">
                                 </span>
@@ -140,17 +113,7 @@
                             </a>
                         </div>
                         <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
-                                <span class="movie-poster">
-                                    <img src="../assets/images/img2.jpg" alt="">
-                                </span>
-                                <span class="movie-title">
-                                    <p>I still believe</p>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
                                 <span class="movie-poster">
                                     <img src="../assets/images/img1.jpg" alt="">
                                 </span>
@@ -160,17 +123,7 @@
                             </a>
                         </div>
                         <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
-                                <span class="movie-poster">
-                                    <img src="../assets/images/img2.jpg" alt="">
-                                </span>
-                                <span class="movie-title">
-                                    <p>I still believe</p>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
                                 <span class="movie-poster">
                                     <img src="../assets/images/img1.jpg" alt="">
                                 </span>
@@ -180,9 +133,29 @@
                             </a>
                         </div>
                         <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
-                            <a href="">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
                                 <span class="movie-poster">
-                                    <img src="../assets/images/img2.jpg" alt="">
+                                    <img src="../assets/images/img1.jpg" alt="">
+                                </span>
+                                <span class="movie-title">
+                                    <p>I still believe</p>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
+                                <span class="movie-poster">
+                                    <img src="../assets/images/img1.jpg" alt="">
+                                </span>
+                                <span class="movie-title">
+                                    <p>I still believe</p>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
+                            <a href="#modal1" data-modal="#modal1" class="js-modal-open">
+                                <span class="movie-poster">
+                                    <img src="../assets/images/img1.jpg" alt="">
                                 </span>
                                 <span class="movie-title">
                                     <p>I still believe</p>
@@ -243,6 +216,9 @@
                             </ul>
                         </span>
                         <span class="popularity">7,3</span>
+                        <span class="trailer">
+                            <button class="btn btn-wow"><i class="fas fa-play    "></i> Watch trailer</button>
+                        </span>
                     </div>
                     <div class="poster-background">
                         <img src="../assets/images/img2.jpg" alt="">
@@ -270,6 +246,12 @@
                             <span class="label">Type</span>
                             <span>Movie</span>
                         </li>
+                        <li class="overview">
+                            <span class="label">Overview</span>
+                            <span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque quam alias temporibus, quaerat cum cupiditate, labore sit ex nemo aliquid consequuntur saepe explicabo facilis eos. Perspiciatis quisquam necessitatibus similique.</p>
+                            </span>
+                        </li>
                         <li>
                             <span class="label">Budjet</span>
                             <span>56 Millions $</span>
@@ -278,12 +260,15 @@
                             <span class="label">Recette</span>
                             <span>56 Millions $</span>
                         </li>
-                        <li class="overview">
-                            <span class="label">Overview</span>
-                            <span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque quam alias temporibus, quaerat cum cupiditate, labore sit ex nemo aliquid consequuntur saepe explicabo facilis eos. Perspiciatis quisquam necessitatibus similique.</p>
-                            </span>
+                        <li>
+                            <span class="label">Writer</span>
+                            <span>Jon Gunn</span>
                         </li>
+                        <li>
+                            <span class="label">Director</span>
+                            <span>Andrew Erwin</span>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

@@ -7,6 +7,7 @@ focusElement = "a, button, input, textarea";
 const openModal = function(e){
     e.preventDefault();
     //le modal a ouvrir est celui ayant l'id correspondant au href du lien cliqué. Pour cela l'attribut href doit être precédé de '#'
+    console.log(e.target);
     currentModal = $(e.target.getAttribute('data-modal'));
     currentModal.css('display', 'flex');
     $('body').css('overflow', 'hidden');
@@ -17,7 +18,7 @@ const openModal = function(e){
     $('.modal-wrapper').click(stopPropagation);
     modalFocusElement = Array.from(currentModal.find(focusElement));
     previousFocused = $(':focus');
-    modalFocusElement[0].focus();
+    if(modalFocusElement.length>0) modalFocusElement[0].focus();
 }
 
 const closeModal = function(e){
@@ -41,7 +42,9 @@ const stopPropagation = function(e){
     e.stopPropagation();
 }
 $('.js-modal-open').each(function(){
-    $(this).on('click', openModal)
+    $(this).on('click', function(e){
+        openModal(e)
+    });
 });
 
 $(window).keydown(function(e){
