@@ -34,6 +34,7 @@ function search(page){
             .catch(() =>{
                 console.log("Error", error);
             })
+        document.getElementById("result-title").innerHTML = `Results for "${value}"`;
         document.querySelector('.result-section').style.display = "block";
     }else{
         document.querySelector('.result-section').style.display = "none";

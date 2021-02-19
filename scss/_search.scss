@@ -75,6 +75,9 @@ html.night-mode{
         }
     }
 }
+.page-left section{
+    padding: 10px 20px;
+}
 .newest-section{
     .movie-container{
         position: relative;
@@ -286,5 +289,8 @@ html.night-mode{
     .movie-infos-container{
         grid-template-columns: auto;
         grid-template-rows: 45% 1fr;
+    }
+    .page-left section{
+        padding: 10px 20px !important;
     }
 }
