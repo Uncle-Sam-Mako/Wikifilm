@@ -11,7 +11,8 @@ changeStyleMode();
 //TMDB API
 const API_KEY = "834aaad6249c99581606d4c68f11385b";
 const url = "https://api.themoviedb.org/3/search/multi?api_key=834aaad6249c99581606d4c68f11385b&language=en-US&page=1&include_adult=false";
-const IMAGE_PATH = "https://image.tmdb.org/t/p/w500"
+const IMAGE_PATH = "https://image.tmdb.org/t/p/w500";
+const IMAGE_PATH_ORIGINAL = "https://image.tmdb.org/t/p/original";
 
 
 const inputSearch = document.querySelector("#inputSearch");
@@ -107,9 +108,10 @@ function getRecommendMovie(){
         .then((res) => res.json())
         .then((data) => {
             const movies = data.results; 
+            console.log(movies);
             setRecommendMovie(movies);
         })
-        .catch(() =>{
+        .catch(() => {
             console.log("Error", error);
         })
 }
@@ -117,6 +119,36 @@ function getRecommendMovie(){
 function ClearMoviesSearched(){
     const moviesBlock = document.querySelector('.result-section .movie-container .flex');
     moviesBlock.innerHTML="";
+}
+
+function setModalInfos(movie){
+    const container = document.getElementById("movie-infos-modal");
+    document.getElementById("poster-background").src = IMAGE_PATH_ORIGINAL + movie.backdrop_path;
+    container.querySelector(".big-title p").innerHTML= movie.title;
+    container.querySelector(".country").innerHTML = movie.production_countries[0].iso_3166_1;
+    container.querySelector(".genre").innerHTML = `${movie.genres[0].name}, ${movie.genres[1].name} `
+    container.querySelector(".original-title").innerHTML = movie.original_title;
+    container.querySelector(".original-language").innerHTML = movie.original_language;
+    container.querySelector(".release-date").innerHTML = movie.release_date;
+    container.querySelector(".origin-country").innerHTML = movie.production_countries[0].name;
+    container.querySelector(".overview p").innerHTML = movie.overview;
+
+}
+
+function getModalInfos(movie_id){
+    let url = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US`;
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            const movie = data; 
+            console.log(movie);
+            console.log(movie.production_countries[0].iso_3166_1);
+            setModalInfos(movie);
+            
+        })
+        // .catch(() =>{
+        //     console.log("Error", error);
+        // })
 }
 
 window.onload = function(){
@@ -131,4 +163,13 @@ window.onload = function(){
             search();
         }
     })
+    document.getElementById('hello').addEventListener('click', function(e){ 
+        var initElem = e.target; 
+        var movie_id = initElem.getAttribute("data-movie_id");
+        if(initElem.className != 'js-modal-open'){ // Si l'élément n'est pas un de ceux à traiter 
+            return; 
+        } 
+        getModalInfos(movie_id);
+        openModal(e)
+    });
 }

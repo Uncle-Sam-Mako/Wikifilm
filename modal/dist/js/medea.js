@@ -42,8 +42,9 @@ const stopPropagation = function(e){
     e.stopPropagation();
 }
 $('.js-modal-open').each(function(){
-    $(this).on('click', function(e){
+    $(document).on("click", $(this), function(e){
         openModal(e)
+        console.log("hello")
     });
 });
 
@@ -57,3 +58,7 @@ $(window).keydown(function(e){
         break;
     }
 })
+
+// $(document).on("click", "a.delete", function() {
+//     $(this).parent().remove();
+// });
