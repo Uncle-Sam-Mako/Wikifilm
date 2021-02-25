@@ -152,6 +152,8 @@ function getModalInfos(movie_id){
 }
 
 window.onload = function(){
+    const preloader = document.getElementById('preloader');
+    preloader.classList.remove("active");
     getNewestMovies();
     getRecommendMovie();
     buttonSearch.addEventListener('click', function(e){

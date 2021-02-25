@@ -275,9 +275,7 @@ footer{
     }
     svg{
         width: 50px;
-        .rect{
-            animation: preloader 2s ease infinite;
-        }
+        animation: preloader 2s ease infinite;
     }
 }
 
@@ -312,7 +310,6 @@ footer{
 
 @keyframes preloader{
     0%{
-       color: cornflowerblue;
        transform: rotate(360deg);
     }
    

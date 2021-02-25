@@ -147,7 +147,7 @@ ul.infos-list{
 
 .movie-infos-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 48% 1fr;
     height: 100%;
     .small-infos{
         height: 100%;
@@ -277,7 +277,7 @@ html.night-mode{
     }
     .suggested-movie {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         overflow: hidden;
         border-radius: 0 !important;
         //box-shadow: none !important;
