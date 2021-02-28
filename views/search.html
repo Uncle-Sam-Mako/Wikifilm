@@ -27,26 +27,10 @@
     <link rel="stylesheet" href="../fontawesome/css/all.css">
 </head>
 <body>
-    <div id="preloader" class="preloader active">
+    <div id="preloader" class="preloader">
         <span class="logo">
-            <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 111.1919 111.1919" version="1.1" id="svg23" inkscape:version="1.0.1 (0767f8302a, 2020-10-17)" sodipodi:docname="wikifilm_square.svg">
-                <defs id="defs17"></defs>
-                <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.3272807" inkscape:cx="316.11809" inkscape:cy="333.3174" inkscape:document-units="mm" inkscape:current-layer="layer1" inkscape:document-rotation="0" showgrid="false" showguides="false" inkscape:window-width="1308" inkscape:window-height="704" inkscape:window-x="58" inkscape:window-y="27" inkscape:window-maximized="1"></sodipodi:namedview>
-                <metadata id="metadata20">
-                    <rdf:rdf>
-                    <cc:work rdf:about="">
-                        <dc:format>image/svg+xml</dc:format>
-                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
-                        <dc:title></dc:title>
-                    </cc:work>
-                    </rdf:rdf>
-                </metadata>
-                <g inkscape:label="Calque 1" inkscape:groupmode="layer" id="layer1" transform="translate(-42.408268,-59.976437)">
-                    <rect class="rect" ;stroke-width:3.86501" id="rect29" width="111.1919" height="111.1919" x="42.408268" y="59.976437" ry="27.061562" inkscape:export-xdpi="150" inkscape:export-ydpi="150"></rect>
-                    <text xml:space="preserve" style="font-size:100.549px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;fill:#ffffff;stroke-width:0.52369;" x="72.51635" y="146.7424" id="text33" inkscape:export-xdpi="150" inkscape:export-ydpi="150"><tspan class="letter" sodipodi:role="line" id="tspan31" x="72.51635" y="146.7424" style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:100.549px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Medium';stroke-width:0.52369;">w</tspan></text>
-                </g>
-            </svg>
-        </span>
+            <img src="../assets/images/wikifilm_square_3.png" alt="">
+         </span>
     </div>
     <header>
         <nav class="navbar">
@@ -98,7 +82,7 @@
         </div>
     </section>
     <section class="main-page flex">
-        <div class="page-left wd-lg-9 wd-12">
+        <div class="page-left wd-lg-9 wd-12"  id="hello">
             <section class="result-section mg-t-1 mg-b-2" style="display: none;">
                 <h2 id="result-title"></h2>
                 <div class="movie-container mg-t-5">
@@ -121,7 +105,7 @@
             </section>
             <section class="newest-section mg-t-1">
                 <h2>Newests movies"</h2>
-                <div class="movie-container mg-t-5" id="hello">
+                <div class="movie-container mg-t-5">
                     <template id="newest-movie-template">
                         <div class="movie-item wd-lg-3 wd-md-4 wd-sm-4 wd-xs-6">
                             <a href="#modal1" data-modal="#modal1" class="js-modal-open">
@@ -150,19 +134,19 @@
                     <div class="movie-infos">
                         <ul class="infos-list">
                             <li>
-                                <span class="label">Original title</span>
+                                <span class="label">Titre originale</span>
                                 <span class="original_title"></span>
                             </li>
                             <li>
-                                <span class="label">Release date</span>
+                                <span class="label">Date de sortie</span>
                                 <span class="release_date"></span>
                             </li>
                             <li>
-                                <span class="label">Original language</span>
+                                <span class="label">Langue originale</span>
                                 <span class="original_language"></span>
                             </li>
                             <li>
-                                <span class="label">Overview</span>
+                                <span class="label">Synopsis</span>
                                 <span class="overview"></span>
                             </li>
                         </ul>
@@ -171,8 +155,13 @@
             </div>
         </aside>
     </section>
-    <aside id="modal1" class="modal movie-infos" aria-hidden="true" role="dialog" aria-modal="false" style="">
+    <aside id="modal1" class="modal movie-infos" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
         <div class="modal-wrapper wd-lg-6" aria-labelledby="" id="movie-infos-modal">
+            <!-- <div id="preloader2" class="preloader active">
+                <span class="logo">
+                    <img src="../assets/images/wikifilm_square_3.png" alt="">
+                </span>
+            </div> -->
             <button class="js-modal-close"><img src="../modal/src/assets/svg/times.svg" alt="" srcset=""></button>
             <div class="movie-infos-container">
                 <div class="small-infos">
@@ -188,9 +177,9 @@
                                 <li class="duration">1h 56m</li>
                             </ul>
                         </span>
-                        <span class="popularity">7,3</span>
+                        <span class="vote_average"></span>
                         <span class="trailer">
-                            <button class="btn btn-wow"><i class="fas fa-play"></i> Watch trailer</button>
+                            <button class="btn btn-wow"><i class="fas fa-play"></i>Bande annonce</button>
                         </span>
                     </div>
                     <div class="poster-background">
@@ -200,19 +189,19 @@
                 <div class="more-infos">
                     <ul class="infos-list">
                         <li>
-                            <span class="label">Original title</span>
+                            <span class="label">Titre original</span>
                             <span class="original-title"></span>
                         </li>
                         <li>
-                            <span class="label">Original language</span>
+                            <span class="label">Langue originale</span>
                             <span class="original-language"></span>
                         </li>
                         <li>
-                            <span class="label">Release date</span>
+                            <span class="label">Date de sortie</span>
                             <span class="release-date"></span>
                         </li>
                         <li>
-                            <span class="label">Country</span>
+                            <span class="label">Pays</span>
                             <span class="origin-country"></span>
                         </li>
                         <li>
@@ -220,7 +209,7 @@
                             <span>Movie</span>
                         </li>
                         <li class="overview">
-                            <span class="label">Overview</span>
+                            <span class="label">Synopsis</span>
                             <span class="overview">
                                 <p></p>
                             </span>
@@ -234,11 +223,11 @@
                             <span>56 Millions $</span>
                         </li>
                         <li>
-                            <span class="label">Writer</span>
+                            <span class="label">Editeur</span>
                             <span>Jon Gunn</span>
                         </li>
                         <li>
-                            <span class="label">Director</span>
+                            <span class="label">Direction</span>
                             <span>Andrew Erwin</span>
                         </li>
                         
@@ -272,5 +261,8 @@
     <script src="https://kit.fontawesome.com/47fc11e9b5.js" crossorigin="anonymous"></script>
     <script src="../modal/dist/js/medea.js"></script>
     <script src="../dist/js/app.js"></script>
+    <script>
+        getMovies();
+    </script>
 </body>
 </html>
