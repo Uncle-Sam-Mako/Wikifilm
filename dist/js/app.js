@@ -155,15 +155,15 @@ function getMovies(){
     function setModalInfos(movie){
         const container = document.getElementById("movie-infos-modal");
         document.getElementById("poster-background").src = IMAGE_PATH_ORIGINAL + movie.backdrop_path;
-        container.querySelector(".big-title p").innerHTML= movie.title;
-        container.querySelector(".country").innerHTML = movie.production_countries[0].iso_3166_1;
+        container.querySelector(".big-title p").innerHTML = movie.title ? movie.title : " - " ;
+        container.querySelector(".country").innerHTML = movie.production_countries[0].iso_3166_1 ? movie.production_countries[0].iso_3166_1 : " - ";
         container.querySelector(".genre").innerHTML = `${movie.genres[0].name}, ${movie.genres[1].name} `
-        container.querySelector(".original-title").innerHTML = movie.original_title;
-        container.querySelector(".original-language").innerHTML = movie.original_language;
-        container.querySelector(".release-date").innerHTML = movie.release_date;
-        container.querySelector(".origin-country").innerHTML = movie.production_countries[0].name;
-        container.querySelector(".overview p").innerHTML = movie.overview;
-        container.querySelector(".vote_average").innerHTML = movie.vote_average;
+        container.querySelector(".original-title").innerHTML = movie.original_title ? movie.original_title : " - ";
+        container.querySelector(".original-language").innerHTML = movie.original_language ? movie.original_language : " - "; 
+        container.querySelector(".release-date").innerHTML = movie.release_date ? movie.release_date : " - ";
+        container.querySelector(".origin-country").innerHTML = movie.production_countries[0].name ? movie.production_countries[0].name : " - ";
+        container.querySelector(".overview p").innerHTML = movie.overview ? movie.overview : " Aucune information ";
+        container.querySelector(".vote_average").innerHTML = movie.vote_average ? movie.vote_average : "?";
 
     }
 
