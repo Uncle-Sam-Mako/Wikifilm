@@ -2,7 +2,7 @@
 html{
     --search-bar-bg : #f5f5f5;
     --search-bar-border : #eee;
-    --input-bg : #fafafa;
+    --input-bg : #fff;
 }
 html.night-mode{
     --search-bar-bg : #272727;
@@ -47,6 +47,10 @@ html.night-mode{
             transform: translateY(-50%);
         }
     }
+}
+.main-page{
+    margin-top: 35px;
+    background: whitesmoke;
 }
 .movie-container{
     .movie-item{
@@ -96,7 +100,7 @@ html.night-mode{
             position: absolute;
             top: 0;
             right: -1px;
-            background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
+            background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, whitesmoke 100%);
             will-change: opacity;
             pointer-events: none;
             z-index: 1;
@@ -113,7 +117,7 @@ html.night-mode{
     margin-top: 90px;
     .suggested-container{
         padding: 0 20px;
-        background-color: var(--color-one);
+        background-color: none;
         h3{
             width: max-content;
             background: var(--input-bg);
