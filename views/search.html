@@ -27,10 +27,10 @@
     <link rel="stylesheet" href="../fontawesome/css/all.css">
 </head>
 <body>
-    <div id="preloader" class="preloader">
-        <span class="logo">
-            <img src="../assets/images/wikifilm_square_3.png" alt="">
-         </span>
+    <div id="preloader" class="preloader active">
+        <div id="loader-content">
+            <p>CHARGEMENT...</p>
+        </div>
     </div>
     <header>
         <nav class="navbar">
@@ -157,11 +157,11 @@
     </section>
     <aside id="modal1" class="modal movie-infos" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
         <div class="modal-wrapper wd-lg-6" aria-labelledby="" id="movie-infos-modal">
-            <!-- <div id="preloader2" class="preloader active">
-                <span class="logo">
-                    <img src="../assets/images/wikifilm_square_3.png" alt="">
-                </span>
-            </div> -->
+            <div id="modal-preloader" class="preloader">
+                <div id="loader-content">
+                    <p>CHARGEMENT...</p>
+                </div>
+            </div>
             <button class="js-modal-close"><img src="../modal/src/assets/svg/times.svg" alt="" srcset=""></button>
             <div class="movie-infos-container">
                 <div class="small-infos">
@@ -215,12 +215,8 @@
                             <span>Movie</span>
                         </li>
                         <li>
-                            <span class="label">Budjet</span>
-                            <span>56 Millions $</span>
-                        </li>
-                        <li>
-                            <span class="label">Recette</span>
-                            <span>56 Millions $</span>
+                            <span class="label">Revenue</span>
+                            <span class="revenue"> - </span>
                         </li>
                         <li>
                             <span class="label">Editeur</span>
@@ -262,7 +258,11 @@
     <script src="../modal/dist/js/medea.js"></script>
     <script src="../dist/js/app.js"></script>
     <script>
-        getMovies();
-    </script>
+        window.onload = function(){
+            getMovies();
+           const pagePreloader = document.getElementById('preloader');
+           pagePreloader.classList.remove("active");   
+       }
+   </script>
 </body>
 </html>

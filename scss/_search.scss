@@ -50,7 +50,7 @@ html.night-mode{
 }
 .main-page{
     margin-top: 35px;
-    background: whitesmoke;
+    background: var(--color-one);
 }
 .movie-container{
     .movie-item{
@@ -136,7 +136,9 @@ html.night-mode{
         }
     }
 }
+
 .modal-wrapper{
+    position: relative;
     padding: 0 !important;
     overflow-y: hidden;
     background: var(--search-bar-bg);

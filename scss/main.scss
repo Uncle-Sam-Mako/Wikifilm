@@ -1,7 +1,7 @@
 @import './variables';
 @import './index';
 @import './search';
-
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 //reset
 *{
     margin: 0;
@@ -258,25 +258,46 @@ footer{
     }
 }
 
-.preloader{
-    width: 100%;
-    height: 100vh;
-    background-color: #eeeeee;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    z-index: 99999;
+#preloader, #modal-preloader{
     display: none;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--color-one);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
     &.active{
         display: flex;
     }
-    img{
-        width: 50px;
-        animation: preloader 2s ease infinite;
-    }
+}
+#modal-preloader{
+    height: 100%;
+}
+#loader-content{
+    font-size: medium;
+    letter-spacing: .2em;
+}
+#loader-content p{
+    position: relative;
+    color: var(--text-color);
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+}
+#loader-content p::before{
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    display: inline-block;
+    backdrop-filter: blur(3px);
+    /* background: red; */
+    width: 110%;
+    height: 120%;
+    animation: loading 2s ease-out infinite ;
 }
 
 @media(max-width : 640px){
@@ -317,4 +338,15 @@ footer{
         transform: rotate(0deg);
     }
 
+}
+@keyframes loading{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0%;
+    }
 }
